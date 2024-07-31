@@ -22,8 +22,7 @@ export default function Home() {
 
         <main className="flex-1 flex flex-col">
 
-          <h1 className="text-4xl font-bold uppercase w-full
-           bg-muted p-6 text-center">
+          <h1 className="text-4xl font-bold uppercase w-full p-6 text-center">
             Sistema de Gestão de Manutenção</h1>
 
           <div>

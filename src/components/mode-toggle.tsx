@@ -41,6 +41,10 @@ export function ModeToggle() {
         <DropdownMenuItem onClick={() => setTheme("discord-dark")}>
             Discord-Dark
         </DropdownMenuItem>
+
+        <DropdownMenuItem onClick={() => setTheme("oficina")}>
+            Oficina
+        </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
   )
