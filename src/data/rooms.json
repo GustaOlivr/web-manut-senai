@@ -1,0 +1,13 @@
+[
+    { "id": 1, "name": "Secretaria", "address": "Bloco A" },
+    { "id": 2, "name": "Pátio", "address": "Bloco B" },
+    { "id": 3, "name": "Sala de Informática 1", "address": "Bloco C, Sala 101" },
+    { "id": 4, "name": "Refeitório", "address": "Bloco D" },
+    { "id": 5, "name": "Sala de Metrologia", "address": "Bloco E, Sala 201" },
+    { "id": 6, "name": "Laboratório de Química", "address": "Bloco F, Sala 301" },
+    { "id": 7, "name": "Biblioteca", "address": "Bloco G" },
+    { "id": 8, "name": "Auditório", "address": "Bloco H" },
+    { "id": 9, "name": "Oficina Mecânica", "address": "Bloco I" },
+    { "id": 10, "name": "Sala de Eletrônica", "address": "Bloco J, Sala 401" }
+  ]
+  
