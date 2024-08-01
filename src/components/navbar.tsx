@@ -16,8 +16,8 @@ export function NavBar() {
 
     return (
         <nav className="space-y-4 flex flex-col bg-muted rounded-lg p-8 mt-8">
-            {links.map((obj) => (
-                <a href={obj.target} className="flex items-center gap-4 text-secondary hover:font-semibold">
+            {links.map((obj,index) => (
+                <a key={index} href={obj.target} className="flex items-center gap-4 text-secondary hover:font-semibold">
                     {obj.icon}
                     {obj.text}
                 </a>

@@ -4,11 +4,19 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 First, run the development server:
 
+npm install
+
+npm install next-themes
+
+
 npm install react-icons --save
 
 npm install @tanstack/react-table shadcn/ui
 
 npm install @tanstack/react-table
+
+npx shadcn-ui@latest add table
+
 
 ```bash
 npm run dev

@@ -23,7 +23,7 @@ export default function RootLayout({
             defaultTheme="system"
             enableSystem
             disableTransitionOnChange
-            themes={["light", "dark", "discord-dark", "dracula-dark"]}
+            themes={["light", "dark", "discord-dark", "dracula-dark", "oficina"]}
           >
             {children}
           </ThemeProvider>
