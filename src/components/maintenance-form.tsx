@@ -8,19 +8,20 @@ import {
     DialogTitle,
     DialogTrigger,
   } from "@/components/ui/dialog"
+import { RegisterMaintenanceForm } from "./form-main"
 
-  export function MaintenanceForm() {
+  export function ModalMaintenanceForm() {
 return(
 <Dialog>
     <DialogTrigger className="bg-muted text-primary h-10 px-4 py-2 rounded-md text-sm font-medium">Cadastrar manutenção</DialogTrigger>
     <DialogContent>
         <DialogHeader>
-        <DialogTitle>Are you absolutely sure?</DialogTitle>
+        <DialogTitle>Cadastro de manutenção</DialogTitle>
         <DialogDescription>
-            This action cannot be undone. This will permanently delete your account
-            and remove your data from our servers.
+            Preencha com os campos para criar registrar uma nova manutenção
         </DialogDescription>
         </DialogHeader>
+        <RegisterMaintenanceForm/>
     </DialogContent>
 </Dialog>
   
