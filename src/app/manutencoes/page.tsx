@@ -4,6 +4,7 @@ import React from "react";
 import { Maintenance, columns } from "./columns";
 import { DataTable } from "@/components/ui/data-table";
 import { Button } from "@/components/ui/button";
+import { MaintenanceForm } from "@/components/maintenance-form";
 
 async function getData(): Promise<Maintenance[]> {
   // Fetch data from your API here.
@@ -67,7 +68,8 @@ export default function Manutencoes() {
           <div className="container mx-auto py-5">
             <DataTable columns={columns} data={data} />
             <div className="flex justify-end mt-4">
-                <Button variant={"muted"}>Cadastrar manutenção</Button>
+                {/* <Button variant={"muted"}>Cadastrar manutenção</Button> */}
+                <MaintenanceForm></MaintenanceForm>
             </div>
           </div>
 
