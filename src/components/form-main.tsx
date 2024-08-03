@@ -60,7 +60,7 @@ export function RegisterMaintenanceForm() {
               <FormItem>
                 <FormLabel>Moto</FormLabel>
                 <FormControl>
-                  <Input placeholder="Nome da moto" {...field} />
+                  <Input placeholder="" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -73,7 +73,7 @@ export function RegisterMaintenanceForm() {
               <FormItem>
                 <FormLabel>Prioridade</FormLabel>
                 <FormControl>
-                  <Input type="number" placeholder="Prioridade" {...field} />
+                  <Input type="number" placeholder="" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -86,7 +86,7 @@ export function RegisterMaintenanceForm() {
               <FormItem>
                 <FormLabel>Data</FormLabel>
                 <FormControl>
-                  <Input placeholder="dd/mm/yyyy" {...field} />
+                  <Input placeholder="dd/mm/yyyy" {...field}/>
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -99,7 +99,7 @@ export function RegisterMaintenanceForm() {
               <FormItem>
                 <FormLabel>Descrição</FormLabel>
                 <FormControl>
-                  <Input placeholder="Descrição" {...field} />
+                  <Input placeholder="" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -112,7 +112,7 @@ export function RegisterMaintenanceForm() {
               <FormItem>
                 <FormLabel>Responsável</FormLabel>
                 <FormControl>
-                  <Input placeholder="Responsável" {...field} />
+                  <Input placeholder="" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -125,7 +125,7 @@ export function RegisterMaintenanceForm() {
               <FormItem>
                 <FormLabel>Status</FormLabel>
                 <FormControl>
-                  <Input type="number" placeholder="Status" {...field} />
+                  <Input type="number" placeholder="" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -138,7 +138,7 @@ export function RegisterMaintenanceForm() {
               <FormItem>
                 <FormLabel>Comentário</FormLabel>
                 <FormControl>
-                  <Input placeholder="Comentário" {...field} />
+                  <Input placeholder="" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
