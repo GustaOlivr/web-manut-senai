@@ -1,18 +1,10 @@
-"use client"
+"use client";
 
-import { Button } from "@/components/ui/button"
-import { ColumnDef } from "@tanstack/react-table"
-
-// This type is used to define the shape of our data.
-// You can use a Zod schema here if you want.
-export type Motorcycle = {
-  id: string
-  tipo: "Custom" | "Esportiva" | "Street" | "Scooter" | "Off-Road"
-  modelo: string
-  data_fabricacao:  string
-  numero_serie: string
-  proprietario: string //substitui o campo de localização dos critérios
-}
+import { Button } from "@/components/ui/button";
+import { ColumnDef } from "@tanstack/react-table";
+import React, { useState } from "react";
+import { Motorcycle } from "./types"; // Certifique-se de ter um arquivo types.ts com o tipo Motorcycle definido
+import { ModalMotorcycleDetails } from "@/components/modal-motorcycle-details"; // Certifique-se de que o caminho esteja correto
 
 export const columns: ColumnDef<Motorcycle>[] = [
   {
@@ -28,24 +20,25 @@ export const columns: ColumnDef<Motorcycle>[] = [
     header: "Modelo"
   },
   {
-    accessorKey: "data_fabricacao",
-    header: "Data de Fabricação",
-  },
-  {
-    accessorKey: "numero_serie",
-    header: "Número de Série",
-  },
-  {
     accessorKey: "proprietario",
     header: "Proprietário",
   },
   {
     id: "actions",
     header: "Ações",
-    cell: ({ row }) => (
-      <Button >
-        Ver Detalhes
-      </Button>
-    )
+    cell: ({ row }) => {
+      const [isOpen, setIsOpen] = useState(false);
+
+      return (
+        <>
+          <Button onClick={() => setIsOpen(true)}>Ver Detalhes</Button>
+          <ModalMotorcycleDetails 
+            isOpen={isOpen} 
+            onClose={() => setIsOpen(false)} 
+            motorcycle={row.original} 
+          />
+        </>
+      );
+    }
   }
 ];

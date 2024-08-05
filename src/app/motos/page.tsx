@@ -1,12 +1,11 @@
-"use client"; // Adicione esta linha
+"use client";
 
 import React from "react";
-import { Motorcycle, columns } from "./columns";
+import { columns } from "./columns";
 import { DataTable } from "@/components/ui/data-table";
-import { Button } from "@/components/ui/button";
-import { ModalMaintenanceForm } from "@/components/maintenance-form";
+import { Motorcycle } from "./types";
 
-async function getData(): Promise<Motorcycle[]> {
+export async function getData(): Promise<Motorcycle[]> {
   // Fetch data from your API here.
   return [
     {
@@ -46,7 +45,6 @@ async function getData(): Promise<Motorcycle[]> {
 }
 
 export default function Motos() {
-
   const [data, setData] = React.useState<Motorcycle[]>([]);
 
   React.useEffect(() => {
@@ -64,16 +62,13 @@ export default function Motos() {
           <h1 className="text-4xl font-bold uppercase w-full p-6 text-center">
             Motos 
           </h1>
-
           <div className="container mx-auto py-5">
             <DataTable columns={columns} data={data} />
             <div className="flex justify-end mt-4">
-                {/* <Button variant={"muted"}>Cadastrar manutenção</Button> */}
-                {/* <ModalMaintenanceForm></ModalMaintenanceForm> */}
+              {/* <Button variant={"muted"}>Cadastrar manutenção</Button> */}
+              {/* <ModalMaintenanceForm></ModalMaintenanceForm> */}
             </div>
           </div>
-
-
         </main>
       </div>
     </div>
