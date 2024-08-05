@@ -9,7 +9,7 @@ export function NavBar() {
     const links = [
         {target: "/", text: "Dashboard", icon: <MdDashboard className="text-muted-foreground"/>},
         {target: "#", text: "Ambientes", icon: <FiBox className="text-muted-foreground"/>},
-        {target: "#", text: "Equipamentos", icon: <FaGear className="text-muted-foreground"/>},
+        {target: "/motos", text: "Motos", icon: <FaGear className="text-muted-foreground"/>},
         {target: "/manutencoes", text: "Manutenções", icon: <FiTool className="text-muted-foreground"/>},
         {target: "#", text: "Usuários", icon: <FaRegUserCircle className="text-muted-foreground"/>},
     ];
