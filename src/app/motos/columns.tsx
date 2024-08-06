@@ -8,7 +8,7 @@ import { ModalMotorcycleDetails } from "@/components/modal-motorcycle-details"; 
 
 export const columns: ColumnDef<Motorcycle>[] = [
   {
-    accessorKey: "id",
+    accessorKey: "moto_id",
     header: "ID",
   },
   {

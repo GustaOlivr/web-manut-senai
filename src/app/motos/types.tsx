@@ -1,5 +1,5 @@
 export type Motorcycle = {
-  id: string;
+  moto_id: string;
   tipo: MotorcycleType;
   modelo: string;
   data_fabricacao: string;

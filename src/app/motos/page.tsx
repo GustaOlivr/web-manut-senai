@@ -10,7 +10,7 @@ export async function getData(): Promise<Motorcycle[]> {
   // Fetch data from your API here.
   return [
     {
-        id: "df21fs",
+        moto_id: "df21fs",
         tipo: "Custom",
         modelo: "Harley-Davidson Street 750",
         data_fabricacao: "10-05-2018",
@@ -18,7 +18,7 @@ export async function getData(): Promise<Motorcycle[]> {
         proprietario: "Gabriel Santos"
       },
       {
-        id: "h2k31s",
+        moto_id: "h2k31s",
         tipo: "Esportiva",
         modelo: "Yamaha YZF-R3",
         data_fabricacao: "02-03-2020",
@@ -26,7 +26,7 @@ export async function getData(): Promise<Motorcycle[]> {
         proprietario: "Mariana Lima"
       },
       {
-        id: "kgk2s1",
+        moto_id: "kgk2s1",
         tipo: "Street",
         modelo: "Honda CB300R",
         data_fabricacao: "15-07-2019",
@@ -34,7 +34,7 @@ export async function getData(): Promise<Motorcycle[]> {
         proprietario: "Carlos Oliveira"
       },
       {
-        id: "js6fa7s",
+        moto_id: "js6fa7s",
         tipo: "Scooter",
         modelo: "Vespa GTS 300",
         data_fabricacao: "05-11-2018",
