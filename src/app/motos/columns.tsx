@@ -31,12 +31,12 @@ export const columns: ColumnDef<Motorcycle>[] = [
 
       return (
         <>
-          <Button onClick={() => setIsOpen(true)}>Ver Detalhes</Button>
+          {/* <Button onClick={() => setIsOpen(true)}>Ver Detalhes</Button>
           <ModalMotorcycleDetails 
             isOpen={isOpen} 
             onClose={() => setIsOpen(false)} 
             motorcycle={row.original} 
-          />
+          /> */}
         </>
       );
     }
