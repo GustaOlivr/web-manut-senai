@@ -4,6 +4,7 @@ import React from "react";
 import { columns } from "./columns";
 import { DataTable } from "@/components/ui/data-table";
 import { Motorcycle } from "./types";
+import { ModalMotorcycleRegister } from "@/components/motorcycle-register";
 
 export async function getData(): Promise<Motorcycle[]> {
   // Fetch data from your API here.
@@ -66,7 +67,7 @@ export default function Motos() {
             <DataTable columns={columns} data={data} />
             <div className="flex justify-end mt-4">
               {/* <Button variant={"muted"}>Cadastrar manutenção</Button> */}
-              {/* <ModalMaintenanceForm></ModalMaintenanceForm> */}
+              <ModalMotorcycleRegister></ModalMotorcycleRegister>
             </div>
           </div>
         </main>
