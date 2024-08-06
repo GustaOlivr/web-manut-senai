@@ -19,6 +19,10 @@ export function ModalMotorcycleRegister() {
   const [formData, setFormData] = useState({
     email: "",
     tipo: "" as MotorcycleType,
+    modelo: "",
+    data: "",
+    numero_serie: "",
+    proprietario: ""
   });
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -57,6 +61,18 @@ export function ModalMotorcycleRegister() {
 
           <Label>Tipo</Label>
           <SelectMotorcycleTypes selectedTipo={formData.tipo} onTipoChange={handleSelectChange} />
+
+          <Label>Modelo</Label>
+          <Input type="string" id="modelo" placeholder="Fazer YS 250" onChange={handleInputChange} />
+
+          <Label htmlFor="date">Data de Fabricação</Label>
+          <Input type="date" id="data" value={formData.data} onChange={handleInputChange} />
+
+          <Label htmlFor="string">Número de Série</Label>
+          <Input type="string" id="numero_serie" placeholder="YSF5MT3FAC8XRE2" onChange={handleInputChange} />
+
+          <Label htmlFor="string">Proprietário</Label>
+          <Input type="string" id="proprietario" placeholder="Gustavo Oliveira" onChange={handleInputChange} />
         </div>
         <div className="flex items-center justify-center">
         <Button onClick={handleSubmit}  className="text-muted-foreground bg-muted w-1/2">Registrar</Button>
