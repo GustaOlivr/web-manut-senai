@@ -45,22 +45,4 @@ export const columns: ColumnDef<Maintenance>[] = [
     accessorKey: "data",
     header: "Data",
   },
-  {
-    id: "actions",
-    header: "Ações",
-    cell: ({ row }) => {
-      const [isOpen, setIsOpen] = useState(false);
-
-      return (
-        <>
-          <Button onClick={() => setIsOpen(true)}>Ver Detalhes</Button>
-          <ModalMotorcycleDetails 
-            isOpen={isOpen} 
-            onClose={() => setIsOpen(false)} 
-            maintanence={row.original} 
-          />
-        </>
-      );
-    }
-  }
 ];

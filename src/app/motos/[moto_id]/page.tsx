@@ -7,8 +7,8 @@ import { Motorcycle } from "../types";
 import { ModalMotorcycleRegister } from "@/components/motorcycle-register";
 import { Maintenance } from "@/app/manutencoes/columns";
 import { MaintenanceDetailCard } from "@/components/maintenance-detail-card";
-
-
+import { ModalMotorcycleDetails } from "@/components/modal-motorcycle-details";
+import { maintenanceDetail } from "@/data/maintenanceDetailData";
 
 interface Props {
   params: { moto_id: string };
@@ -105,7 +105,7 @@ async function getData(): Promise<Maintenance[]> {
 
 export default function ProfileDetails({ params }: Props) {
   const [data, setData] = React.useState<Maintenance[]>([]);
-  const { moto_id } = params; // Destructure moto_id from params
+  const { moto_id } = params;
 
   React.useEffect(() => {
     async function fetchData() {
@@ -122,45 +122,7 @@ export default function ProfileDetails({ params }: Props) {
           <h1 className="text-4xl font-bold w-full p-6 text-start">
             Detalhes da {moto_id} 
           </h1>
-          <MaintenanceDetailCard maintanence={
-                  {
-                    id: "gs2ksk",
-                    moto: "Fazer YS 250",
-                    prioridade: 3,
-                    status: "Finalizada",
-                    responsavel: "Rui",
-                    data: "09/11/2023",
-                    pecas: [
-                      {
-                        nome: "Bateria",
-                        codigo: "BT101",
-                        fornecedor: "Heliar",
-                        quantidade_estoque: 7,
-                        valor_unitario: 200.0,
-                      },
-                      {
-                        nome: "Bateria",
-                        codigo: "BT101",
-                        fornecedor: "Heliar",
-                        quantidade_estoque: 7,
-                        valor_unitario: 200.0,
-                      },
-                      {
-                        nome: "Filtro de Óleo",
-                        codigo: "FO123",
-                        fornecedor: "Yamaha",
-                        quantidade_estoque: 10,
-                        valor_unitario: 50.0,
-                      },
-                      {
-                        nome: "Pneu Traseiro",
-                        codigo: "PT456",
-                        fornecedor: "Pirelli",
-                        quantidade_estoque: 5,
-                        valor_unitario: 300.0,
-                      },
-                    ]
-                  }}></MaintenanceDetailCard>
+                  <ModalMotorcycleDetails maintanence={maintenanceDetail}></ModalMotorcycleDetails>
         </main>
       </div>
     </div>
