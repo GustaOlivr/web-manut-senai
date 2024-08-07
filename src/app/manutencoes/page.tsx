@@ -16,6 +16,7 @@ async function getData(): Promise<Maintenance[]> {
         status: "Pendente",
         responsavel: "Gabriel",
         data: "10/12/2024",
+        pecas: []
       },
       {
         id: "rr41we",
@@ -24,6 +25,7 @@ async function getData(): Promise<Maintenance[]> {
         status: "Em progresso",
         responsavel: "Rui",
         data: "14/12/2024",
+        pecas: []
       },
       {
         id: "sw81te",
@@ -32,6 +34,7 @@ async function getData(): Promise<Maintenance[]> {
         status: "Finalizada",
         responsavel: "Rogerio",
         data: "14/12/2024",
+        pecas: []
       },
       {
         id: "gs2ksk",
@@ -40,6 +43,7 @@ async function getData(): Promise<Maintenance[]> {
         status: "Finalizada",
         responsavel: "Rui",
         data: "14/12/2024",
+        pecas: []
       },
     // ...
   ];

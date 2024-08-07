@@ -21,6 +21,22 @@ async function getData(): Promise<Maintenance[]> {
         status: "Em progresso",
         responsavel: "Gabriel",
         data: "20/12/2024",
+        pecas: [
+          {
+            nome: "Filtro de Óleo",
+            codigo: "FO123",
+            fornecedor: "Yamaha",
+            quantidade_estoque: 10,
+            valor_unitario: 50.0,
+          },
+          {
+            nome: "Bateria",
+            codigo: "BT101",
+            fornecedor: "Heliar",
+            quantidade_estoque: 7,
+            valor_unitario: 200.0,
+          },
+        ]
       },
       {
         id: "rr41we",
@@ -29,6 +45,22 @@ async function getData(): Promise<Maintenance[]> {
         status: "Finalizada",
         responsavel: "Rui",
         data: "14/06/2024",
+        pecas: [
+          {
+            nome: "Filtro de Óleo",
+            codigo: "FO123",
+            fornecedor: "Yamaha",
+            quantidade_estoque: 10,
+            valor_unitario: 50.0,
+          },
+          {
+            nome: "Pneu Traseiro",
+            codigo: "PT456",
+            fornecedor: "Pirelli",
+            quantidade_estoque: 5,
+            valor_unitario: 300.0,
+          },
+        ]
       },
       {
         id: "sw81te",
@@ -37,6 +69,15 @@ async function getData(): Promise<Maintenance[]> {
         status: "Finalizada",
         responsavel: "Rogerio",
         data: "05/01/2024",
+        pecas: [
+          {
+            nome: "Vela de Ignição",
+            codigo: "VI789",
+            fornecedor: "NGK",
+            quantidade_estoque: 20,
+            valor_unitario: 25.0,
+          },
+        ]
       },
       {
         id: "gs2ksk",
@@ -45,6 +86,15 @@ async function getData(): Promise<Maintenance[]> {
         status: "Finalizada",
         responsavel: "Rui",
         data: "09/11/2023",
+        pecas: [
+          {
+            nome: "Bateria",
+            codigo: "BT101",
+            fornecedor: "Heliar",
+            quantidade_estoque: 7,
+            valor_unitario: 200.0,
+          },
+        ]
       },
     // ...
   ];

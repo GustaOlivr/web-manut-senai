@@ -33,6 +33,25 @@ export function ModalMotorcycleDetails({ isOpen, onClose, maintanence }: ModalMo
           <p><strong>Tipo:</strong> {maintanence.moto}</p>
           <p><strong>Modelo:</strong> {maintanence.status}</p>
         </div>
+        <div>
+          <h3 className="text-lg mt-4 pb-4">Peças Utilizadas:</h3>
+          {maintanence.pecas.length > 0 ? (
+            <ul className="list-disc">
+              {maintanence.pecas.map((peca, index) => (
+                <li key={index}>
+                  <div className="pb-8">
+                  <p className="text-muted-foreground"><strong>{peca.nome}</strong></p>
+                  <p><strong>Código:</strong> {peca.codigo}</p>
+                  <p><strong>Fornecedor:</strong> {peca.fornecedor}</p>
+                  <p><strong>Valor Unitário:</strong> R$ {peca.valor_unitario.toFixed(2)}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <p>Nenhuma peça utilizada nesta manutenção.</p>
+          )}
+        </div>
       </DialogContent>
     </Dialog>
   );

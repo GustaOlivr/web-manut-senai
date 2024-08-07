@@ -1,5 +1,6 @@
 "use client"
 
+import { Peca } from "@/app/manutencoes/columns"
 import { ModalMotorcycleDetails } from "@/components/modal-motorcycle-details"
 import { Button } from "@/components/ui/button"
 import { ColumnDef } from "@tanstack/react-table"
@@ -14,16 +15,13 @@ export type Maintenance = {
   status:  "Pendente" | "Em progresso" | "Finalizada" | "failed"
   responsavel: string
   data: string
+  pecas: Peca[];
 }
 
 export const columns: ColumnDef<Maintenance>[] = [
   {
     accessorKey: "moto",
     header: "Moto",
-  },
-  {
-    accessorKey: "prioridade",
-    header: "Prioridade",
   },
     {
     accessorKey: "status",

@@ -12,6 +12,15 @@ export type Maintenance = {
   status:  "Pendente" | "Em progresso" | "Finalizada" | "failed"
   responsavel: string
   data: string
+  pecas: Peca[];
+}
+
+export type Peca = {
+  nome: string;
+  codigo: string;
+  fornecedor: string;
+  quantidade_estoque: number;
+  valor_unitario: number;
 }
 
 export const columns: ColumnDef<Maintenance>[] = [
