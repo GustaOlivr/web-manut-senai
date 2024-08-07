@@ -6,6 +6,9 @@ import { DataTable } from "@/components/ui/data-table";
 import { Motorcycle } from "../types";
 import { ModalMotorcycleRegister } from "@/components/motorcycle-register";
 import { Maintenance } from "@/app/manutencoes/columns";
+import { MaintenanceDetailCard } from "@/components/maintenance-detail-card";
+
+
 
 interface Props {
   params: { moto_id: string };
@@ -119,15 +122,45 @@ export default function ProfileDetails({ params }: Props) {
           <h1 className="text-4xl font-bold w-full p-6 text-start">
             Detalhes da {moto_id} 
           </h1>
-
-          <div className="container mx-auto py-5">
-            <DataTable columns={columns} data={data} />
-            <div className="flex justify-end mt-4">
-                {/* <Button variant={"muted"}>Cadastrar manutenção</Button> */}
-            </div>
-          </div>
-
-
+          <MaintenanceDetailCard maintanence={
+                  {
+                    id: "gs2ksk",
+                    moto: "Fazer YS 250",
+                    prioridade: 3,
+                    status: "Finalizada",
+                    responsavel: "Rui",
+                    data: "09/11/2023",
+                    pecas: [
+                      {
+                        nome: "Bateria",
+                        codigo: "BT101",
+                        fornecedor: "Heliar",
+                        quantidade_estoque: 7,
+                        valor_unitario: 200.0,
+                      },
+                      {
+                        nome: "Bateria",
+                        codigo: "BT101",
+                        fornecedor: "Heliar",
+                        quantidade_estoque: 7,
+                        valor_unitario: 200.0,
+                      },
+                      {
+                        nome: "Filtro de Óleo",
+                        codigo: "FO123",
+                        fornecedor: "Yamaha",
+                        quantidade_estoque: 10,
+                        valor_unitario: 50.0,
+                      },
+                      {
+                        nome: "Pneu Traseiro",
+                        codigo: "PT456",
+                        fornecedor: "Pirelli",
+                        quantidade_estoque: 5,
+                        valor_unitario: 300.0,
+                      },
+                    ]
+                  }}></MaintenanceDetailCard>
         </main>
       </div>
     </div>
