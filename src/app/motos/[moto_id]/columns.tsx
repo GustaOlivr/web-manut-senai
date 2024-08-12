@@ -1,7 +1,10 @@
 "use client"
 
+import { Peca } from "@/app/manutencoes/columns"
+import { ModalMotorcycleDetails } from "@/components/modal-motorcycle-details"
 import { Button } from "@/components/ui/button"
 import { ColumnDef } from "@tanstack/react-table"
+import { useState } from "react"
 
 // This type is used to define the shape of our data.
 // You can use a Zod schema here if you want.
@@ -15,22 +18,10 @@ export type Maintenance = {
   pecas: Peca[];
 }
 
-export type Peca = {
-  nome: string;
-  codigo: string;
-  fornecedor: string;
-  quantidade_estoque: number;
-  valor_unitario: number;
-}
-
 export const columns: ColumnDef<Maintenance>[] = [
   {
     accessorKey: "moto",
     header: "Moto",
-  },
-  {
-    accessorKey: "prioridade",
-    header: "Prioridade",
   },
     {
     accessorKey: "status",
@@ -54,13 +45,4 @@ export const columns: ColumnDef<Maintenance>[] = [
     accessorKey: "data",
     header: "Data",
   },
-  {
-    id: "actions",
-    header: "Ações",
-    cell: ({ row }) => (
-      <Button >
-        Ver Detalhes
-      </Button>
-    )
-  }
 ];
