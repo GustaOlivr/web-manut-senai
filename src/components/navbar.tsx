@@ -13,7 +13,6 @@ export function NavBar() {
         {target: "/motos", text: "Motos", icon: <FaMotorcycle className="text-muted-foreground"/>},
         {target: "/manutencoes", text: "Manutenções", icon: <FiTool className="text-muted-foreground"/>},
         {target: "#", text: "Usuários", icon: <FaRegUserCircle className="text-muted-foreground"/>},
-        {target: "/motos/fazer250", text: "fazer 250", icon: <FaRegUserCircle className="text-muted-foreground"/>},
     ];
 
     return (
