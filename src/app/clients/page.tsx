@@ -12,6 +12,7 @@ import { columns } from "../clients/columns";
 import { Client } from "../clients/types";
 import { DataTable } from "@/components/ui/data-table";
 import { clientData } from "@/data/clientDetailData";
+import { RegisterClientForm } from "@/components/form-client";
 
 async function getData(): Promise<Client[]> {
   // Fetch data from your API here.
@@ -49,8 +50,11 @@ export default function Clients() {
             Clientes
           </h1>
 
-          <div className="container mx-auto py-5">
+          <div className="container mx-auto py-5 flex">
             <DataTable columns={columns} data={data} />
+            <div className="flex justify-end mt-4">
+                <RegisterClientForm></RegisterClientForm>
+            </div>
           </div>
         </main>
       </div>
