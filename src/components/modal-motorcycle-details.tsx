@@ -22,11 +22,15 @@ type ModalMotorcycleDetailsProps = {
 export function ModalMotorcycleDetails({ maintanence, motorcycle}: ModalMotorcycleDetailsProps) {
   return (
     <div>
-      <div>
-        <p><strong>ID:</strong> {maintanence.id}</p>
-        <p><strong>Tipo:</strong> {maintanence.moto}</p>
-        <p><strong>Modelo:</strong> {maintanence.status}</p>
-        <MotorcycleHistory motorcycle={motorcycle} />
+      <div  className="flex">
+        <div>
+          <p><strong>ID:</strong> {maintanence.id}</p>
+          <p><strong>Tipo:</strong> {maintanence.moto}</p>
+          <p><strong>Modelo:</strong> {maintanence.status}</p>
+        </div>
+        <div className="pl-20">
+          <MotorcycleHistory motorcycle={motorcycle} />
+        </div>
       </div>
       <div>
         <h3 className="text-lg mt-4 pb-4">Peças Utilizadas:</h3>
