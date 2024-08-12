@@ -9,6 +9,7 @@ import { Maintenance } from "@/app/manutencoes/columns";
 import { MaintenanceDetailCard } from "@/components/maintenance-detail-card";
 import { ModalMotorcycleDetails } from "@/components/modal-motorcycle-details";
 import { maintenanceDetail } from "@/data/maintenanceDetailData";
+import { motorcycleDetail } from "@/data/motorcycleDetailData";
 
 interface Props {
   params: { moto_id: string };
@@ -122,7 +123,7 @@ export default function ProfileDetails({ params }: Props) {
           <h1 className="text-4xl font-bold w-full p-6 text-start">
             Detalhes da {moto_id} 
           </h1>
-                  <ModalMotorcycleDetails maintanence={maintenanceDetail}></ModalMotorcycleDetails>
+                  <ModalMotorcycleDetails maintanence={maintenanceDetail} motorcycle={motorcycleDetail}></ModalMotorcycleDetails>
         </main>
       </div>
     </div>

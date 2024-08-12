@@ -12,18 +12,21 @@ import { Motorcycle } from "../app/motos/types"; // Certifique-se de ter um arqu
 import React from "react";
 import { Maintenance } from "@/app/manutencoes/columns";
 import { PartCard } from "./part-card";
+import { MotorcycleHistory } from "./motorcycle_history_detail";
 
 type ModalMotorcycleDetailsProps = {
   maintanence: Maintenance;
+  motorcycle: Motorcycle;
 };
 
-export function ModalMotorcycleDetails({ maintanence }: ModalMotorcycleDetailsProps) {
+export function ModalMotorcycleDetails({ maintanence, motorcycle}: ModalMotorcycleDetailsProps) {
   return (
     <div>
       <div>
         <p><strong>ID:</strong> {maintanence.id}</p>
         <p><strong>Tipo:</strong> {maintanence.moto}</p>
         <p><strong>Modelo:</strong> {maintanence.status}</p>
+        <MotorcycleHistory motorcycle={motorcycle} />
       </div>
       <div>
         <h3 className="text-lg mt-4 pb-4">Peças Utilizadas:</h3>

@@ -15,7 +15,8 @@ export async function getData(): Promise<Motorcycle[]> {
         modelo: "Harley-Davidson Street 750",
         data_fabricacao: "10-05-2018",
         numero_serie: "HDST7502018XYZ",
-        proprietario: "Gabriel Santos"
+        proprietario: "Gabriel Santos",
+        historico_manutencao: ["10/12/22","10/12/23"]
       },
       {
         moto_id: "h2k31s",
@@ -23,7 +24,9 @@ export async function getData(): Promise<Motorcycle[]> {
         modelo: "Yamaha YZF-R3",
         data_fabricacao: "02-03-2020",
         numero_serie: "YYZR32020ABC",
-        proprietario: "Mariana Lima"
+        proprietario: "Mariana Lima",
+        historico_manutencao: ["10/12/22","10/12/23"]
+
       },
       {
         moto_id: "kgk2s1",
@@ -31,7 +34,9 @@ export async function getData(): Promise<Motorcycle[]> {
         modelo: "Honda CB300R",
         data_fabricacao: "15-07-2019",
         numero_serie: "HCB300R2019QWE",
-        proprietario: "Carlos Oliveira"
+        proprietario: "Carlos Oliveira",
+        historico_manutencao: ["10/12/22","10/12/23"]
+
       },
       {
         moto_id: "js6fa7s",
@@ -39,14 +44,15 @@ export async function getData(): Promise<Motorcycle[]> {
         modelo: "Vespa GTS 300",
         data_fabricacao: "05-11-2018",
         numero_serie: "VGTS3002021RTY",
-        proprietario: "Julia Ferreira"
+        proprietario: "Julia Ferreira",
+        historico_manutencao: ["10/12/22","10/12/23"]
       },
     // ...
   ];
 }
 
 export default function Motos() {
-  const [data, setData] = React.useState<Motorcycle[]>([]);
+  const [ 	data, setData] = React.useState<Motorcycle[]>([]);
 
   React.useEffect(() => {
     async function fetchData() {
