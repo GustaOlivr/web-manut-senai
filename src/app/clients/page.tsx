@@ -1,18 +1,12 @@
 "use client"; // Adicione esta linha
 
 import React from "react";
-import { Aside } from "@/components/aside";
-import { Card } from "@/components/card";
-import { Footer } from "@/components/footer";
-import { FaGear } from "react-icons/fa6";
-import { FiBox } from "react-icons/fi";
-import { GrNotes } from "react-icons/gr";
-import { IoMdCheckboxOutline } from "react-icons/io";
 import { columns } from "../clients/columns";
 import { Client } from "../clients/types";
 import { DataTable } from "@/components/ui/data-table";
 import { clientData } from "@/data/clientDetailData";
 import { RegisterClientForm } from "@/components/form-client";
+import { TitleTable } from "@/components/title-table";
 
 async function getData(): Promise<Client[]> {
   // Fetch data from your API here.
@@ -21,16 +15,6 @@ async function getData(): Promise<Client[]> {
 }
 
 export default function Clients() {
-  const cards = [
-    { qty: "10", text: "Ambientes", icon: <FiBox size={40} /> },
-    { qty: "78", text: "Equipamentos", icon: <FaGear size={40} /> },
-    { qty: "22", text: "O.S. Abertas", icon: <GrNotes size={40} /> },
-    {
-      qty: "93",
-      text: "O.S. Concluídas",
-      icon: <IoMdCheckboxOutline size={40} />,
-    },
-  ];
 
   const [data, setData] = React.useState<Client[]>([]);
 
@@ -50,10 +34,13 @@ export default function Clients() {
             Clientes
           </h1>
 
-          <div className="container mx-auto py-5 flex">
-            <DataTable columns={columns} data={data} />
-            <div className="flex justify-end mt-4">
-                <RegisterClientForm></RegisterClientForm>
+          <div className="container mx-auto flex gap-4">
+            <div className="w-7/12">
+            <TitleTable text="Cadastros Recentes"></TitleTable>
+              <DataTable columns={columns} data={data} />
+            </div>
+            <div className="w-5/12">
+              <RegisterClientForm />
             </div>
           </div>
         </main>

@@ -32,7 +32,7 @@ const formSchema = z.object({
   client_id: z.string(), // Campo obrigatório para o ID do cliente
   cpf: z.string().regex(/^\d{3}\.\d{3}\.\d{3}-\d{2}$/, { message: "Invalid CPF format" }), // Validação do CPF no formato correto
   name: z.string().min(1, { message: "Name is required" }), // Validação para garantir que o nome não esteja vazio
-  gender: z.enum(["Masculino", "Feminino"]), // Campo para selecionar o gênero, limitado às opções Masculino e Feminino
+  gender: z.enum(["Masculino", "Feminino", "Old Spice Lenhador", "Bitcoin", "Troglodita" ]), // Campo para selecionar o gênero, limitado às opções Masculino e Feminino
   date_birth: z.string().regex(/^(0[1-9]|[12][0-9]|3[01])\/(0[1-9]|1[0-2])\/\d{4}$/, { message: "Date must be in the format dd/mm/yyyy" }), // Validação da data de nascimento no formato dd/mm/yyyy
   motorcycles: z.array(z.object({ // Estrutura de validação para a lista de motos associadas ao cliente
     moto_id: z.string(),
@@ -65,17 +65,17 @@ export function RegisterClientForm() {
   });
 
   return (
-    <div className="h-full overflow-y-auto p-4">
+    <div className="h-full overflow-y-auto pl-10 w-2/3">
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
           <FormField
             control={form.control}
-            name="client_id"
+            name="name"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Client ID</FormLabel>
+                <FormLabel>Nome</FormLabel>
                 <FormControl>
-                  <Input placeholder="Enter Client ID" {...field} />
+                  <Input placeholder="Digite o nome" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -88,20 +88,7 @@ export function RegisterClientForm() {
               <FormItem>
                 <FormLabel>CPF</FormLabel>
                 <FormControl>
-                  <Input placeholder="Enter CPF (000.000.000-00)" {...field} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
-            name="name"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Name</FormLabel>
-                <FormControl>
-                  <Input placeholder="Enter Name" {...field} />
+                  <Input placeholder="Digite o CPF (000.000.000-00)" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -112,11 +99,14 @@ export function RegisterClientForm() {
             name="gender"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Gender</FormLabel>
+                <FormLabel>Gênero</FormLabel>
                 <FormControl>
-                  <select {...field} className="border rounded p-2">
+                  <select {...field} className="border rounded p-2 ml-4">
                     <option value="Masculino">Masculino</option>
                     <option value="Feminino">Feminino</option>
+                    <option value="Old Spice Lenhador">Old Spice Lenhador</option>
+                    <option value="Bitcoin">Bitcoin</option>
+                    <option value="Troglodita">Troglodita</option>
                   </select>
                 </FormControl>
                 <FormMessage />
@@ -128,7 +118,7 @@ export function RegisterClientForm() {
             name="date_birth"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Date of Birth</FormLabel>
+                <FormLabel>Data de Nascimento</FormLabel>
                 <FormControl>
                   <Input placeholder="dd/mm/yyyy" {...field} />
                 </FormControl>
@@ -136,15 +126,14 @@ export function RegisterClientForm() {
               </FormItem>
             )}
           />
-          {/* Supondo que as motos serão adicionadas de forma dinâmica */}
           <FormField
             control={form.control}
             name="motorcycles"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Motorcycles</FormLabel>
+                <FormLabel>Motos</FormLabel>
                 <FormDescription>
-                  Este campo armazenará os dados das motos, que devem ser manipulados por um formulário dinâmico ou componente separado.
+                  Vou fazer um campo manipulável para registrar motos talvez ou listar as placas de motos cadastradas no sistema.
                 </FormDescription>
               </FormItem>
             )}
