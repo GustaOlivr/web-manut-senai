@@ -16,6 +16,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Motorcycle } from "@/app/motos/types";
+import { Title } from "./title";
 
 // Definição do esquema de validação usando zod para o tipo Client
 export type Client = {
@@ -65,7 +66,8 @@ export function RegisterClientForm() {
   });
 
   return (
-    <div className="h-full overflow-y-auto pl-10 w-2/3">
+    <div className="h-full overflow-y-auto p-10 w-2/3 rounded-lg bg-muted">
+      <Title text="Cadastro de cliente"></Title>
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
           <FormField
@@ -101,13 +103,15 @@ export function RegisterClientForm() {
               <FormItem>
                 <FormLabel>Gênero</FormLabel>
                 <FormControl>
-                  <select {...field} className="border rounded p-2 ml-4">
+                  <div>
+                  <select {...field} className="border rounded p-2 w-full">
                     <option value="Masculino">Masculino</option>
                     <option value="Feminino">Feminino</option>
                     <option value="Old Spice Lenhador">Old Spice Lenhador</option>
                     <option value="Bitcoin">Bitcoin</option>
                     <option value="Troglodita">Troglodita</option>
                   </select>
+                  </div>
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -138,7 +142,7 @@ export function RegisterClientForm() {
               </FormItem>
             )}
           />
-          <Button type="submit">Submit</Button>
+          <Button type="submit">Salvar</Button>
         </form>
       </Form>
     </div>

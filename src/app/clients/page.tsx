@@ -27,7 +27,7 @@ export default function Clients() {
   }, []);
 
   return (
-    <div className="flex flex-col overflow-y-auto w-full">
+    <div className="flex flex-col overflow-y-auto w-full py-10">
       <div className="flex-1 flex">
         <main className="flex-1 flex flex-col">
           <h1 className="text-4xl font-bold uppercase w-full p-6 text-center">
