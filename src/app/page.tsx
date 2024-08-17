@@ -8,45 +8,44 @@ import { FaGear } from "react-icons/fa6";
 import { FiBox } from "react-icons/fi";
 import { GrNotes } from "react-icons/gr";
 import { IoMdCheckboxOutline } from "react-icons/io";
-import { Payment, columns } from "./locals/columns";
 import { DataTable } from "../components/ui/data-table";
 
-async function getData(): Promise<Payment[]> {
-  // Fetch data from your API here.
-  return [
-    {
-      id: "728ed52f",
-      amount: 100,
-      status: "pending",
-      email: "m@example.com",
-    },
-    {
-      id: "452kkdiw1",
-      amount: 100,
-      status: "processing",
-      email: "admin@example.com",
-    },
-    {
-      id: "452kkdiw1",
-      amount: 100,
-      status: "processing",
-      email: "admin@example.com",
-    },
-    {
-      id: "452kkdiw1",
-      amount: 100,
-      status: "processing",
-      email: "admin@example.com",
-    },
-    {
-      id: "452kkdiw1",
-      amount: 100,
-      status: "processing",
-      email: "admin@example.com",
-    },
-    // ...
-  ];
-}
+// async function getData(): Promise<Payment[]> {
+//   // Fetch data from your API here.
+//   return [
+//     {
+//       id: "728ed52f",
+//       amount: 100,
+//       status: "pending",
+//       email: "m@example.com",
+//     },
+//     {
+//       id: "452kkdiw1",
+//       amount: 100,
+//       status: "processing",
+//       email: "admin@example.com",
+//     },
+//     {
+//       id: "452kkdiw1",
+//       amount: 100,
+//       status: "processing",
+//       email: "admin@example.com",
+//     },
+//     {
+//       id: "452kkdiw1",
+//       amount: 100,
+//       status: "processing",
+//       email: "admin@example.com",
+//     },
+//     {
+//       id: "452kkdiw1",
+//       amount: 100,
+//       status: "processing",
+//       email: "admin@example.com",
+//     },
+//     // ...
+//   ];
+// }
 
 export default function Home() {
   const cards = [
@@ -60,15 +59,15 @@ export default function Home() {
     },
   ];
 
-  const [data, setData] = React.useState<Payment[]>([]);
+  // const [data, setData] = React.useState<Payment[]>([]);
 
-  React.useEffect(() => {
-    async function fetchData() {
-      const result = await getData();
-      setData(result);
-    }
-    fetchData();
-  }, []);
+  // React.useEffect(() => {
+  //   async function fetchData() {
+  //     const result = await getData();
+  //     setData(result);
+  //   }
+  //   fetchData();
+  // }, []);
 
   return (
     <div className="flex flex-col overflow-y-auto w-full">
@@ -89,9 +88,9 @@ export default function Home() {
             ))}
           </div>
 
-          <div className="container mx-auto py-5">
+          {/* <div className="container mx-auto py-5">
             <DataTable columns={columns} data={data} />
-          </div>
+          </div> */}
         </main>
       </div>
     </div>
