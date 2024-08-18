@@ -50,4 +50,5 @@ export const partData: Part[] = [
         quantity_stock: 15,
         unit_value: 320.00,
       },
+      
   ];

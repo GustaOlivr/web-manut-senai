@@ -33,10 +33,8 @@ export default function Clients() {
           <h1 className="text-4xl font-bold uppercase w-full p-6 text-center">
             Estoque de peças
           </h1>
-
           <div className="container mx-auto flex gap-4">
             <div className="w-7/12">
-            <TitleTable text="Últimas peças registradas"></TitleTable>
               <DataTable columns={columns} data={data} />
             </div>
             <div className="w-5/12">
