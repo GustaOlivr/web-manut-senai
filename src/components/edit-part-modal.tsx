@@ -88,23 +88,6 @@ export function EditPartModal({ part, onSubmit }: EditPartModalProps) {
             />
             <FormField
               control={form.control}
-              name="quantity_stock"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Quantidade em Estoque</FormLabel>
-                  <FormControl>
-                    <Input
-                      type="number"
-                      placeholder="Digite a quantidade em estoque"
-                      {...field}
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
               name="unit_value"
               render={({ field }) => (
                 <FormItem>
