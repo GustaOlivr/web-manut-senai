@@ -4,7 +4,7 @@ import { ColumnDef } from "@tanstack/react-table";
 import { Part } from "./types";
 import { DetailEntityModal } from "@/components/details-entity-modal";
 import { EditPartModal } from "@/components/edit-part-modal";
-import { DeletePartConfirmation } from "@/components/delete-part-modal";
+import { DeleteConfirmation } from "@/components/delete-part-modal";
 
 export const columns: ColumnDef<Part>[] = [
   {
@@ -34,12 +34,24 @@ export const columns: ColumnDef<Part>[] = [
   {
     id: "actions",
     header: "Ações",
-    cell: ({ row }) => (
-      <div className="flex space-x-2">
-        <DetailEntityModal part={row.original} />
-        <EditPartModal part={row.original} onSubmit={(data) => console.log("Edit", data)} />
-        <DeletePartConfirmation part={row.original} onConfirm={() => console.log("Delete", row.original.part_id)} />
-      </div>
-    )
+    cell: ({ row }) => {
+      const part = row.original;
+
+      const handleDelete = () => {
+        // Lógica para excluir o item
+        console.log("Delete", part.part_id);
+      };
+
+      return (
+        <div className="flex space-x-2">
+          <DetailEntityModal part={part} />
+          <EditPartModal part={part} onSubmit={(data) => console.log("Edit", data)} />
+          <DeleteConfirmation
+            itemName={part.name}
+            onConfirm={handleDelete}
+          />
+        </div>
+      );
+    }
   },
 ];
