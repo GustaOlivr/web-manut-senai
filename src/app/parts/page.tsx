@@ -37,8 +37,8 @@ export default function Clients() {
               <DataTable columns={columns} data={data} />
             </div>
             <div className="w-5/12">
+            <RegisterEntryModal />
               <RegisterPartForm />
-              <RegisterEntryModal />
             </div>
           </div>
         </main>

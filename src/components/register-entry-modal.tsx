@@ -10,6 +10,7 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
+import { Label } from "./ui/label";
 import { Button } from "@/components/ui/button";
 
 export const RegisterEntryModal: React.FC = () => {
@@ -24,31 +25,34 @@ export const RegisterEntryModal: React.FC = () => {
 
   return (
     <Dialog>
-      <DialogTrigger className="bg-muted text-primary px-4 py-2 rounded-md text-sm font-medium">
+      <DialogTrigger className="bg-muted text-primary px-4 py-2 rounded-md text-sm font-medium mb-4">
         Lançamentos
       </DialogTrigger>
+      <DialogContent>
       <DialogHeader>
         <DialogTitle>Registrar lançamento no estoque</DialogTitle>
       </DialogHeader>
-      <DialogContent>
-        <div className="space-y-4">
+        <div>
           <label htmlFor="type">Tipo:</label>
           <select
             id="type"
             value={type}
             onChange={(e) => setType(e.target.value)}
-            className="bg-muted block w-full p-2 border border-muted-foreground rounded"
+            className="bg-muted block w-full p-2 border border-muted-foreground rounded mb-2"
           >
             <option value="Entrada">Entrada</option>
             <option value="Saída">Saída</option>
             <option value="Balanço">Balanço</option>
           </select>
+          <Label htmlFor="date">Data</Label>
           <Input
             type="date"
             value={date}
             onChange={(e) => setDate(e.target.value)}
             placeholder="Data"
+            className="mb-2"
           />
+          <Label htmlFor="number">Quantidade</Label>
           <Input
             type="number"
             value={quantity}
