@@ -1,36 +1,34 @@
-// src/components/RegisterEntryModal.tsx
-"use client"; // Adicione esta linha
+"use client";
 
 import React, { useState } from "react";
 import {
   Dialog,
+  DialogClose,
   DialogContent,
   DialogHeader,
   DialogTitle,
+  DialogTrigger,
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 
-interface RegisterEntryModalProps {
-  isOpen: boolean;
-  onClose: () => void;
-}
-
-export const RegisterEntryModal: React.FC<RegisterEntryModalProps> = ({ isOpen, onClose }) => {
-  const [type, setType] = useState<string>("Entrada");
-  const [date, setDate] = useState<string>("");
-  const [quantity, setQuantity] = useState<number>(0);
+export const RegisterEntryModal: React.FC = () => {
+    const [type, setType] = useState<string>("Entrada");
+    const [date, setDate] = useState<string>("");
+    const [quantity, setQuantity] = useState<number>(0);
 
   const handleSave = () => {
     // Implementar a lógica para salvar os dados
     console.log({ type, date, quantity });
-    onClose();
   };
 
   return (
-    <Dialog open={isOpen} onOpenChange={onClose}>
+    <Dialog>
+      <DialogTrigger className="bg-muted text-primary px-4 py-2 rounded-md text-sm font-medium">
+        Lançamentos
+      </DialogTrigger>
       <DialogHeader>
-        <DialogTitle>Registrar Entrada e Saída de Peças</DialogTitle>
+        <DialogTitle>Registrar lançamento no estoque</DialogTitle>
       </DialogHeader>
       <DialogContent>
         <div className="space-y-4">
@@ -59,8 +57,16 @@ export const RegisterEntryModal: React.FC<RegisterEntryModalProps> = ({ isOpen, 
           />
         </div>
         <div className="flex justify-end space-x-2 mt-4">
-          <Button variant="outline" onClick={onClose}>Cancelar</Button>
-          <Button onClick={handleSave}>Salvar</Button>
+        <DialogClose asChild>
+            <Button type="button">
+              Cancelar
+            </Button>
+        </DialogClose>
+        <DialogClose asChild>
+            <Button type="button" onClick={handleSave}>
+                Salvar
+            </Button>
+        </DialogClose>
         </div>
       </DialogContent>
     </Dialog>

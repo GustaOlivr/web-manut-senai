@@ -7,7 +7,6 @@ import { Part } from "./types";
 import { columns } from "./columns";
 import { partData } from "@/data/partData";
 import { RegisterPartForm } from "@/components/form-part";
-import { Button } from "@/components/ui/button";
 import { RegisterEntryModal } from "@/components/register-entry-modal";
 
 async function getData(): Promise<Part[]> {
@@ -17,7 +16,6 @@ async function getData(): Promise<Part[]> {
 
 export default function Clients() {
   const [data, setData] = React.useState<Part[]>([]);
-  const [isModalOpen, setIsModalOpen] = React.useState<boolean>(false);
 
   React.useEffect(() => {
     async function fetchData() {
@@ -26,9 +24,6 @@ export default function Clients() {
     }
     fetchData();
   }, []);
-
-  const handleOpenModal = () => setIsModalOpen(true);
-  const handleCloseModal = () => setIsModalOpen(false);
 
   return (
     <div className="flex flex-col overflow-y-auto w-full py-10">
@@ -43,14 +38,11 @@ export default function Clients() {
             </div>
             <div className="w-5/12">
               <RegisterPartForm />
-              <Button onClick={handleOpenModal} className="mt-4">
-                Registrar Entrada/Saída
-              </Button>
+              <RegisterEntryModal />
             </div>
           </div>
         </main>
       </div>
-      <RegisterEntryModal isOpen={isModalOpen} onClose={handleCloseModal} />
     </div>
   );
 }
