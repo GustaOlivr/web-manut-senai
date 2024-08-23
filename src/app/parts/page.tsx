@@ -8,6 +8,7 @@ import { columns } from "./columns";
 import { partData } from "@/data/partData";
 import { RegisterPartForm } from "@/components/form-part";
 import { RegisterEntryModal } from "@/components/register-entry-modal";
+import { ReportPartModal } from "@/components/report-part-modal";
 
 async function getData(): Promise<Part[]> {
   // Fetch data from your API here.
@@ -33,11 +34,14 @@ export default function Clients() {
             Estoque de peças
           </h1>
           <div className="container mx-auto flex gap-4">
-            <div className="w-7/12">
+            <div className="w-full">
               <DataTable columns={columns} data={data} />
             </div>
-            <div className="w-5/12">
+            <div className="w-full">
+            <div className="flex">
             <RegisterEntryModal />
+            <ReportPartModal/>
+            </div>
               <RegisterPartForm />
             </div>
           </div>

@@ -42,7 +42,7 @@ export function RegisterPartForm() {
   });
 
   return (
-    <div className="h-full overflow-y-auto p-10 w-2/3 rounded-lg bg-muted">
+    <div className="h-auto overflow-y-auto p-10 w-auto rounded-lg bg-muted">
       <Title text="Cadastro de Peça"></Title>
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
