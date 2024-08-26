@@ -23,11 +23,23 @@ const formSchema = z.object({
   supplier: z.string().min(1, { message: "Supplier is required" }),
   quantity_stock: z.number().min(0, { message: "Quantity must be non-negative" }),
   unit_value: z.number().min(0, { message: "Value must be non-negative" }),
+  image: z
+    .any()
+    .refine((file) => file?.size > 0, { message: "Image is required" }), // Validação de imagem
 });
 
 // Função para lidar com o envio do formulário
 function onSubmit(values: z.infer<typeof formSchema>) {
-  console.log(values); // Aqui, os valores do formulário são exibidos no console após a submissão
+  const formData = new FormData();
+  formData.append("name", values.name);
+  formData.append("supplier", values.supplier);
+  formData.append("quantity_stock", values.quantity_stock.toString());
+  formData.append("unit_value", values.unit_value.toString());
+  if (values.image) {
+    formData.append("image", values.image[0]); // Adiciona a imagem ao FormData
+  }
+
+  console.log(formData); // Aqui, o FormData é exibido no console após a submissão
 }
 
 // Componente do formulário de registro de peças
@@ -39,12 +51,13 @@ export function RegisterPartForm() {
       supplier: "", 
       quantity_stock: 0, 
       unit_value: 0, 
+      image: null,
     },
   });
 
   return (
     <Dialog>
-      <DialogTrigger>
+      <DialogTrigger asChild>
         <Button className="mb-4 bg-muted text-muted hover:bg-muted text-black">Registrar Peça</Button>
       </DialogTrigger>
       <DialogContent className="p-2">
@@ -110,6 +123,24 @@ export function RegisterPartForm() {
                         placeholder="Digite o valor unitário" 
                         {...field} 
                         onChange={(e) => field.onChange(parseFloat(e.target.value))} // Converte string para número
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="image"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Imagem do produto</FormLabel>
+                    <FormControl>
+                      <Input 
+                        type="file" 
+                        accept="image/*" 
+                        {...field} 
+                        onChange={(e) => field.onChange(e.target.files)} // Captura o arquivo de imagem
                       />
                     </FormControl>
                     <FormMessage />
