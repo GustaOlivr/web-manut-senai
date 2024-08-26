@@ -82,5 +82,29 @@ const exampleMotorcycles2: Motorcycle[] = [
       gender: "Masculino",
       date_birth: "22/06/1985",
       motorcycles: exampleMotorcycles3,
+    },
+    {
+      client_id: "client123",
+      cpf: "123.456.789-00",
+      name: clientName1,
+      gender: "Masculino",
+      date_birth: "08/10/1995",
+      motorcycles: exampleMotorcycles1,
+    },
+    {
+      client_id: "client456",
+      cpf: "987.654.321-00",
+      name: clientName2,
+      gender: "Feminino",
+      date_birth: "15/11/1990",
+      motorcycles: exampleMotorcycles2,
+    },
+    {
+      client_id: "client789",
+      cpf: "456.123.789-00",
+      name: clientName3,
+      gender: "Masculino",
+      date_birth: "22/06/1985",
+      motorcycles: exampleMotorcycles3,
     }
   ];
