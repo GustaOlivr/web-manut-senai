@@ -33,15 +33,13 @@ export default function Clients() {
           <h1 className="text-4xl font-bold uppercase w-full p-6 text-center">
             Estoque de peças
           </h1>
-          <div className="container mx-auto flex gap-4">
+          <div className="container mx-auto flex flex-col gap-4">
             <div className="w-full">
               <DataTable columns={columns} data={data} />
             </div>
-            <div className="w-full">
-            <div className="flex">
-            <RegisterEntryModal />
-            <ReportPartModal/>
-            </div>
+            <div className="flex justify-end gap-4 mt-4">
+              <RegisterEntryModal />
+              <ReportPartModal />
               <RegisterPartForm />
             </div>
           </div>

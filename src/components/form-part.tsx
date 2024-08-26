@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "./ui/dialog";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
@@ -34,83 +35,92 @@ export function RegisterPartForm() {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      name: "", // Valor padrão para o nome
-      supplier: "", // Valor padrão para o fornecedor
-      quantity_stock: 0, // Valor padrão para a quantidade em estoque
-      unit_value: 0, // Valor padrão para o valor unitário
+      name: "", 
+      supplier: "", 
+      quantity_stock: 0, 
+      unit_value: 0, 
     },
   });
 
   return (
-    <div className="h-auto overflow-y-auto p-10 w-auto rounded-lg bg-muted">
-      <Title text="Cadastro de Peça"></Title>
-      <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
-          <FormField
-            control={form.control}
-            name="name"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Nome da Peça</FormLabel>
-                <FormControl>
-                  <Input placeholder="Digite o nome da peça" {...field} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
-            name="supplier"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Fornecedor</FormLabel>
-                <FormControl>
-                  <Input placeholder="Digite o nome do fornecedor" {...field} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
-            name="quantity_stock"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Quantidade inicial no estoque</FormLabel>
-                <FormControl>
-                  <Input 
-                    type="number" 
-                    placeholder="Digite a quantidade em estoque" 
-                    {...field} 
-                    onChange={(e) => field.onChange(parseInt(e.target.value, 10))} // Converte string para número
-                  />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
-            name="unit_value"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Valor Unitário</FormLabel>
-                <FormControl>
-                  <Input 
-                    type="number" 
-                    placeholder="Digite o valor unitário" 
-                    {...field} 
-                    onChange={(e) => field.onChange(parseFloat(e.target.value))} // Converte string para número
-                  />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <Button type="submit">Salvar</Button>
-        </form>
-      </Form>
-    </div>
+    <Dialog>
+      <DialogTrigger>
+        <Button className="mb-4 bg-muted text-muted hover:bg-muted text-black">Registrar Peça</Button>
+      </DialogTrigger>
+      <DialogContent className="p-2">
+        <DialogHeader>
+          <DialogTitle>Cadastro de Peça</DialogTitle>
+        </DialogHeader>
+        <div className="p-10 bg-muted rounded-lg">
+          <Form {...form}>
+            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+              <FormField
+                control={form.control}
+                name="name"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Nome da Peça</FormLabel>
+                    <FormControl>
+                      <Input placeholder="Digite o nome da peça" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="supplier"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Fornecedor</FormLabel>
+                    <FormControl>
+                      <Input placeholder="Digite o nome do fornecedor" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="quantity_stock"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Quantidade inicial no estoque</FormLabel>
+                    <FormControl>
+                      <Input 
+                        type="number" 
+                        placeholder="Digite a quantidade em estoque" 
+                        {...field} 
+                        onChange={(e) => field.onChange(parseInt(e.target.value, 10))} // Converte string para número
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="unit_value"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Valor Unitário</FormLabel>
+                    <FormControl>
+                      <Input 
+                        type="number" 
+                        placeholder="Digite o valor unitário" 
+                        {...field} 
+                        onChange={(e) => field.onChange(parseFloat(e.target.value))} // Converte string para número
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <Button type="submit">Salvar</Button>
+            </form>
+          </Form>
+        </div>
+      </DialogContent>
+    </Dialog>
   );
 }
