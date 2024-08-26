@@ -7,6 +7,7 @@ import { DataTable } from "@/components/ui/data-table";
 import { clientData } from "@/data/clientDetailData";
 import { RegisterClientForm } from "@/components/form-client";
 import { TitleTable } from "@/components/title-table";
+import { RegisterClientModal } from "@/components/register-client-modal";
 
 async function getData(): Promise<Client[]> {
   // Fetch data from your API here.
@@ -35,12 +36,13 @@ export default function Clients() {
           </h1>
 
           <div className="container mx-auto flex gap-4">
-            <div className="w-7/12">
+            <div className="w-full">
             <TitleTable text="Cadastros Recentes"></TitleTable>
               <DataTable columns={columns} data={data} />
+              <div className="flex justify-end">
+              
+              <RegisterClientModal></RegisterClientModal>
             </div>
-            <div className="w-5/12">
-              <RegisterClientForm />
             </div>
           </div>
         </main>

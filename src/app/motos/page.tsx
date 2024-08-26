@@ -47,6 +47,35 @@ export async function getData(): Promise<Motorcycle[]> {
         proprietario: "Julia Ferreira",
         historico_manutencao: ["10/12/22","10/12/23"]
       },
+      {
+        moto_id: "df21fs",
+        tipo: "Custom",
+        modelo: "Harley-Davidson Street 750",
+        data_fabricacao: "10-05-2018",
+        numero_serie: "HDST7502018XYZ",
+        proprietario: "Gabriel Santos",
+        historico_manutencao: ["10/12/22","10/12/23"]
+      },
+      {
+        moto_id: "h2k31s",
+        tipo: "Esportiva",
+        modelo: "Yamaha YZF-R3",
+        data_fabricacao: "02-03-2020",
+        numero_serie: "YYZR32020ABC",
+        proprietario: "Mariana Lima",
+        historico_manutencao: ["10/12/22","10/12/23"]
+
+      },
+      {
+        moto_id: "kgk2s1",
+        tipo: "Street",
+        modelo: "Honda CB300R",
+        data_fabricacao: "15-07-2019",
+        numero_serie: "HCB300R2019QWE",
+        proprietario: "Carlos Oliveira",
+        historico_manutencao: ["10/12/22","10/12/23"]
+
+      },
     // ...
   ];
 }

@@ -66,7 +66,7 @@ export function RegisterClientForm() {
   });
 
   return (
-    <div className="h-full overflow-y-auto p-10 w-2/3 rounded-lg bg-muted">
+    <div className="">
       <Title text="Cadastro de cliente"></Title>
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
