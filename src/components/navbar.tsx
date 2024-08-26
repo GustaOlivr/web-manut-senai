@@ -16,6 +16,7 @@ export function NavBar() {
         {target: "/manutencoes", text: "Manutenções", icon: <FiTool className="text-muted-foreground"/>},
         {target: "/parts", text: "Peças", icon: <FaGear className="text-muted-foreground"/>},
         {target: "#", text: "Usuários", icon: <FaRegUserCircle className="text-muted-foreground"/>},
+        {target: "/login", text: "Login", icon: <FaRegUserCircle className="text-muted-foreground"/>},
     ];
 
     return (
