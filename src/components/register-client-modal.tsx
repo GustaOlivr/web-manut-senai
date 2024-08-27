@@ -14,7 +14,7 @@ export function RegisterClientModal() {
   return (
     <Dialog>
       <DialogTrigger className="mt-2">
-        <Button>Edit Profile</Button>
+        <Button>Cadastrar cliente</Button>
       </DialogTrigger>
       <DialogContent className="">
         <RegisterClientForm></RegisterClientForm>

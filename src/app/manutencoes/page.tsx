@@ -45,6 +45,33 @@ async function getData(): Promise<Maintenance[]> {
         data: "14/12/2024",
         pecas: []
       },
+      {
+        id: "rr41we",
+        moto: "Cb-250-2015",
+        prioridade: 2,
+        status: "Em progresso",
+        responsavel: "Rui",
+        data: "14/12/2024",
+        pecas: []
+      },
+      {
+        id: "sw81te",
+        moto: "Fazer-250-2017",
+        prioridade: 2,
+        status: "Finalizada",
+        responsavel: "Rogerio",
+        data: "14/12/2024",
+        pecas: []
+      },
+      {
+        id: "gs2ksk",
+        moto: "Factor-160-2012",
+        prioridade: 3,
+        status: "Finalizada",
+        responsavel: "Rui",
+        data: "14/12/2024",
+        pecas: []
+      },
     // ...
   ];
 }

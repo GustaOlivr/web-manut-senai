@@ -57,8 +57,8 @@ export function RegisterPartForm() {
 
   return (
     <Dialog>
-      <DialogTrigger asChild>
-        <Button className="mb-4 bg-muted text-muted hover:bg-muted text-black">Registrar Peça</Button>
+      <DialogTrigger>
+        <Button className="bg-muted text-primary px-4 py-2 rounded-md text-sm font-medium mb-4 hover:bg-muted">Registrar Peça</Button>
       </DialogTrigger>
       <DialogContent className="p-2">
         <DialogHeader>
