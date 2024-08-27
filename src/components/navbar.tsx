@@ -11,6 +11,7 @@ export function NavBar() {
 
     const links = [
         {target: "/", text: "Dashboard", icon: <MdDashboard className="text-muted-foreground"/>},
+        {target: "/dashboards", text: "Dashboard 2", icon: <MdDashboard className="text-muted-foreground"/>},
         {target: "/clients", text: "Clientes", icon: <FaUsers className="text-muted-foreground"/>},
         {target: "/motos", text: "Motos", icon: <FaMotorcycle className="text-muted-foreground"/>},
         {target: "/manutencoes", text: "Manutenções", icon: <FiTool className="text-muted-foreground"/>},

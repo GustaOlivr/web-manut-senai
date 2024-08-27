@@ -8,6 +8,7 @@ import { FaGear } from "react-icons/fa6";
 import { FiBox } from "react-icons/fi";
 import { GrNotes } from "react-icons/gr";
 import { IoMdCheckboxOutline } from "react-icons/io";
+import { MyChart } from "@/components/chart-colaborator";
 
 export default function Dashboards() {
 
@@ -27,7 +28,7 @@ export default function Dashboards() {
       <div className="flex-1 flex">
         <main className="flex-1 flex flex-col">
           <h1 className="text-4xl font-bold uppercase w-full p-6 text-center">
-            Sistema de Gestão de Manutenção
+            Dashboards
           </h1>
           <div className="grid grid-cols-4 gap-4 p-4">
             {cards.map((props) => (
@@ -39,6 +40,9 @@ export default function Dashboards() {
               />
             ))}
           </div>
+          <div>
+            <MyChart></MyChart>
+        </div>
         </main>
       </div>
     </div>
