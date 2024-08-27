@@ -5,6 +5,7 @@ import { Maintenance, columns } from "./columns";
 import { DataTable } from "@/components/ui/data-table";
 import { Button } from "@/components/ui/button";
 import { ModalMaintenanceForm } from "@/components/maintenance-form";
+import { MaintenanceReportModal } from "@/components/report-maintenance-modal";
 
 async function getData(): Promise<Maintenance[]> {
   // Fetch data from your API here.
@@ -71,9 +72,10 @@ export default function Manutencoes() {
 
           <div className="container mx-auto py-5">
             <DataTable columns={columns} data={data} />
-            <div className="flex justify-end mt-4">
+            <div className="flex justify-end mt-4 gap-4">
                 {/* <Button variant={"muted"}>Cadastrar manutenção</Button> */}
                 <ModalMaintenanceForm></ModalMaintenanceForm>
+                <MaintenanceReportModal></MaintenanceReportModal>
             </div>
           </div>
 
